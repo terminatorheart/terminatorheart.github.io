@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp learning (1) | fe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gulp 是继grunt之后的又一个前端集成解决方案，以任务为核心概念，具有简单易学的特点。在linux命令行下的安装方式如下
+全局安装gulp依赖nodejs，如果没有安装nodejs，需要首先安装nodejs，在此不多叙述。请移步官方网站获取安装指导全局安装gulp1npm install --global gulp
+安装gulp为项目依赖1npm install --save-dev gul">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp learning (1)">
+<meta property="og:url" content="https://terminatorheart.github.io/2015/05/04/gulp-learning-1/index.html">
+<meta property="og:site_name" content="fe">
+<meta property="og:description" content="gulp 是继grunt之后的又一个前端集成解决方案，以任务为核心概念，具有简单易学的特点。在linux命令行下的安装方式如下
+全局安装gulp依赖nodejs，如果没有安装nodejs，需要首先安装nodejs，在此不多叙述。请移步官方网站获取安装指导全局安装gulp1npm install --global gulp
+安装gulp为项目依赖1npm install --save-dev gul">
+<meta property="og:updated_time" content="2015-05-04T09:32:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp learning (1)">
+<meta name="twitter:description" content="gulp 是继grunt之后的又一个前端集成解决方案，以任务为核心概念，具有简单易学的特点。在linux命令行下的安装方式如下
+全局安装gulp依赖nodejs，如果没有安装nodejs，需要首先安装nodejs，在此不多叙述。请移步官方网站获取安装指导全局安装gulp1npm install --global gulp
+安装gulp为项目依赖1npm install --save-dev gul">
+  
+    <link rel="alternative" href="/atom.xml" title="fe" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fe</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://terminatorheart.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-gulp-learning-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/04/gulp-learning-1/" class="article-date">
+  <time datetime="2015-05-04T09:32:47.000Z" itemprop="datePublished">2015-05-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/gulp/">gulp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp learning (1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>gulp 是继grunt之后的又一个前端集成解决方案，以任务为核心概念，具有简单易学的特点。在linux命令行下的安装方式如下</p>
+<h2 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h2><p>gulp依赖nodejs，如果没有安装nodejs，需要首先安装nodejs，在此不多叙述。请移步官方网站获取<a href="https://nodejs.org/" target="_blank" rel="external">安装指导</a><br>全局安装gulp<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装gulp为项目依赖"><a href="#安装gulp为项目依赖" class="headerlink" title="安装gulp为项目依赖"></a>安装gulp为项目依赖</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
+<h2 id="在项目根目录下创建gulpfile-js文件"><a href="#在项目根目录下创建gulpfile-js文件" class="headerlink" title="在项目根目录下创建gulpfile.js文件"></a>在项目根目录下创建gulpfile.js文件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// place code for your default task here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="运行gulp"><a href="#运行gulp" class="headerlink" title="运行gulp"></a>运行gulp</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+<p>这里就会运行gulp的默认任务，也就是gulpfile.js文件中定义的default任务</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2015/05/04/gulp-learning-1/" data-id="cilnwdtc10000888p0f9qkzlr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/04/gulp-learning-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          gulp learning (2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/28/javascript-function/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript 函数 (1)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MIME/">MIME</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/fontcustom/">fontcustom</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-trap/">javascript trap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mime/">mime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/">validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-trap/" style="font-size: 10px;">javascript trap</a> <a href="/tags/mime/" style="font-size: 10px;">mime</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a> <a href="/tags/字体图标/" style="font-size: 10px;">字体图标</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/29/fontcustom/">fontcustom</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/12/javascript-design-pattern-1/">javascript之每天一个模式系列(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/javascript-trap/">javascript之我掉过的那些坑</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/06/mime-type/">mime type</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 terminatorheart<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript 函数 (1) | fe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="call()方法第一个实参是要调用对象的母对象，比如f.call( obj ); 就是调用obj对象的f方法，第一个参数之后的所有实参就是要传入待调用的函数的值比如：call方法演示12345function list() &amp;#123;      return Array.prototype.slice.call( arguments); //这里就是调用arguments对象的slice方法&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 函数 (1)">
+<meta property="og:url" content="https://terminatorheart.github.io/2015/04/28/javascript-function/index.html">
+<meta property="og:site_name" content="fe">
+<meta property="og:description" content="call()方法第一个实参是要调用对象的母对象，比如f.call( obj ); 就是调用obj对象的f方法，第一个参数之后的所有实参就是要传入待调用的函数的值比如：call方法演示12345function list() &amp;#123;      return Array.prototype.slice.call( arguments); //这里就是调用arguments对象的slice方法&amp;#">
+<meta property="og:updated_time" content="2016-03-11T16:05:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript 函数 (1)">
+<meta name="twitter:description" content="call()方法第一个实参是要调用对象的母对象，比如f.call( obj ); 就是调用obj对象的f方法，第一个参数之后的所有实参就是要传入待调用的函数的值比如：call方法演示12345function list() &amp;#123;      return Array.prototype.slice.call( arguments); //这里就是调用arguments对象的slice方法&amp;#">
+  
+    <link rel="alternative" href="/atom.xml" title="fe" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">fe</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://terminatorheart.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/28/javascript-function/" class="article-date">
+  <time datetime="2015-04-28T01:30:39.000Z" itemprop="datePublished">2015-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript 函数 (1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="call-方法"><a href="#call-方法" class="headerlink" title="call()方法"></a>call()方法</h1><p>第一个实参是要调用对象的母对象，比如f.call( obj ); 就是调用obj对象的f方法，第一个参数之后的所有实参就是要传入待调用的函数的值<br>比如：<br><figure class="highlight javascript"><figcaption><span>call方法演示</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call( <span class="built_in">arguments</span>); <span class="comment">//这里就是调用arguments对象的slice方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="apply-方法"><a href="#apply-方法" class="headerlink" title="apply()方法"></a>apply()方法</h1><p>同call()方法，不同之处是call方法接受逗号分割的参数，而apply接受一个数组或者是类数组对象，上面的例子使用apply方法改写则如下：<br><figure class="highlight javascript"><figcaption><span>apply方法演示</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call( <span class="built_in">arguments</span>); <span class="comment">//这里就是调用arguments对象的slice方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list1 = list( [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] ); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2015/04/28/javascript-function/" data-id="cilnwdtcn000d888pcjfxf9ly" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/04/gulp-learning-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          gulp learning (1)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/21/email-rules/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">邮箱规则整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MIME/">MIME</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/fontcustom/">fontcustom</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-trap/">javascript trap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mime/">mime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/">validate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体图标/">字体图标</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-trap/" style="font-size: 10px;">javascript trap</a> <a href="/tags/mime/" style="font-size: 10px;">mime</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a> <a href="/tags/字体图标/" style="font-size: 10px;">字体图标</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/29/fontcustom/">fontcustom</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/12/javascript-design-pattern-1/">javascript之每天一个模式系列(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/08/javascript-trap/">javascript之我掉过的那些坑</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/06/mime-type/">mime type</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 terminatorheart<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
