@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/6 | do less, think more!</title>
+  <title>android开发学习系列1 | do less, think more!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="do less, think more!">
-<meta property="og:url" content="https://terminatorheart.github.io/archives/2015/06/index.html">
+  <meta name="description" content="1. Android APP 基础知识App Components（app组件）app组件是一个android应用中最基本的构成块，每一个组件可以构成一个独立的app访问入口，但并不意味着每一个组件一定要成为app的一个访问入口。一共有四种组件：Activities，Services，Content Provider，Broadcast receivers
+Activities（活动）一个Acti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android开发学习系列1">
+<meta property="og:url" content="https://terminatorheart.github.io/2016/03/12/android-series-1/index.html">
 <meta property="og:site_name" content="do less, think more!">
-<meta property="og:description">
+<meta property="og:description" content="1. Android APP 基础知识App Components（app组件）app组件是一个android应用中最基本的构成块，每一个组件可以构成一个独立的app访问入口，但并不意味着每一个组件一定要成为app的一个访问入口。一共有四种组件：Activities，Services，Content Provider，Broadcast receivers
+Activities（活动）一个Acti">
+<meta property="og:updated_time" content="2016-03-11T17:24:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="do less, think more!">
-<meta name="twitter:description">
+<meta name="twitter:title" content="android开发学习系列1">
+<meta name="twitter:description" content="1. Android APP 基础知识App Components（app组件）app组件是一个android应用中最基本的构成块，每一个组件可以构成一个独立的app访问入口，但并不意味着每一个组件一定要成为app的一个访问入口。一共有四种组件：Activities，Services，Content Provider，Broadcast receivers
+Activities（活动）一个Acti">
   
     <link rel="alternative" href="/atom.xml" title="do less, think more!" type="application/atom+xml">
   
@@ -61,39 +65,59 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/29/fontcustom/" class="archive-article-date">
-  <time datetime="2015-06-29T14:47:00.000Z" itemprop="datePublished">Jun 29</time>
+        <section id="main"><article id="post-android-series-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/12/android-series-1/" class="article-date">
+  <time datetime="2016-03-11T17:24:40.000Z" itemprop="datePublished">2016-03-12</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/29/fontcustom/">fontcustom</a>
+    <h1 class="article-title" itemprop="name">
+      android开发学习系列1
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Android-APP-基础知识"><a href="#1-Android-APP-基础知识" class="headerlink" title="1. Android APP 基础知识"></a>1. Android APP 基础知识</h1><h2 id="App-Components（app组件）"><a href="#App-Components（app组件）" class="headerlink" title="App Components（app组件）"></a>App Components（app组件）</h2><p>app组件是一个android应用中最基本的构成块，每一个组件可以构成一个独立的app访问入口，但并不意味着每一个组件一定要成为app的一个访问入口。一共有四种组件：Activities，Services，Content Provider，Broadcast receivers</p>
+<h3 id="Activities（活动）"><a href="#Activities（活动）" class="headerlink" title="Activities（活动）"></a>Activities（活动）</h3><p>一个Activity（活动）代表了独立的，具有用户界面的一屏区域。</p>
+<h3 id="Services（服务）"><a href="#Services（服务）" class="headerlink" title="Services（服务）"></a>Services（服务）</h3><p>一个服务是一个运行于后台，进行耗时长的操作或者是为远程进程处理任务的组件，服务不提供用户界面</p>
+<h3 id="Content-Provider（内容提供商）"><a href="#Content-Provider（内容提供商）" class="headerlink" title="Content Provider（内容提供商）"></a>Content Provider（内容提供商）</h3><p>一个内容提供商管理着一份应用数据。其他应用可以通过内容提供商来查询甚至修改（前提是获得本引用的允许）本应用的数据</p>
+<h3 id="Broadcast-receivers（广播接收者）"><a href="#Broadcast-receivers（广播接收者）" class="headerlink" title="Broadcast receivers（广播接收者）"></a>Broadcast receivers（广播接收者）</h3><p>一个广播接收者是一个回应系统范围内的广播通知的组件，很多广播就来源于系统。比如通知屏幕关闭，电量低等。应用也可以发起广播，比如：让其他应用知道一些数据已经被下载到设备上了，可以供这些应用使用了。尽管广播接收者不显示用户界面，它们却有可能在广播事件发生的时候通过创建状态栏通知来告知用户。</p>
+<p>Android系统设计的一个独特点在于任何一个app都可以启动另一个app的组件。所以<br>Android app没有一个单点入口。<br>而由于每个app都通过文件权限限制访问其他应用，并且系统将每个应用都运行在独立的进程中，所以我们并不能直接激活另一个app中的组件，但是Android系统是可以做这件事情的。所以如果要激活另一个app中的组件，就必须向系统发送消息以指明启动特定app组件的意图。然后系统才会为我们激活要求的组件。</p>
+<h2 id="Activating-Components（激活的组件）"><a href="#Activating-Components（激活的组件）" class="headerlink" title="Activating Components（激活的组件）"></a>Activating Components（激活的组件）</h2><p>以上四种组件中的三种－Activities（活动），services（服务），broadcast receivers（广播接收者）－都是通过一个叫做intent（意图）的异步信息激活。不论组件是属于你的app还是别人的，intent都是在运行时将互相独立的组件绑定到一起。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/03/12/android-series-1/" data-id="ciox27x3k0001gx6fffrp1l2o" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/12/npm-permission-denied/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">npm install -g package_name 权限问题应对方案</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">
