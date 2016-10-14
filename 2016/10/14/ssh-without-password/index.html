@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: js | do less, think more!</title>
+  <title>ssh 免密码登录设置 | do less, think more!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="do less, think more!">
-<meta property="og:url" content="https://terminatorheart.github.io/tags/js/index.html">
+  <meta name="description" content="linux设置免密码登录在自动化部署工作中，为安全考虑，不会允许在脚本中使用登录密码进入服务器，这就要求要做密码免登操作。具体步骤如下：1 生成本地机器的公司钥对ssh-keygen -t rsa -b 2048     (指定使用rsa算法，生成的密钥长度为2048位)2 拷贝本地机器的公钥文件内容到远端机器的authorized_keys文件cat ~/.ssh/id_rsa.pub | ss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh 免密码登录设置">
+<meta property="og:url" content="https://terminatorheart.github.io/2016/10/14/ssh-without-password/index.html">
 <meta property="og:site_name" content="do less, think more!">
-<meta property="og:description">
+<meta property="og:description" content="linux设置免密码登录在自动化部署工作中，为安全考虑，不会允许在脚本中使用登录密码进入服务器，这就要求要做密码免登操作。具体步骤如下：1 生成本地机器的公司钥对ssh-keygen -t rsa -b 2048     (指定使用rsa算法，生成的密钥长度为2048位)2 拷贝本地机器的公钥文件内容到远端机器的authorized_keys文件cat ~/.ssh/id_rsa.pub | ss">
+<meta property="og:updated_time" content="2016-10-14T09:16:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="do less, think more!">
-<meta name="twitter:description">
+<meta name="twitter:title" content="ssh 免密码登录设置">
+<meta name="twitter:description" content="linux设置免密码登录在自动化部署工作中，为安全考虑，不会允许在脚本中使用登录密码进入服务器，这就要求要做密码免登操作。具体步骤如下：1 生成本地机器的公司钥对ssh-keygen -t rsa -b 2048     (指定使用rsa算法，生成的密钥长度为2048位)2 拷贝本地机器的公钥文件内容到远端机器的authorized_keys文件cat ~/.ssh/id_rsa.pub | ss">
   
     <link rel="alternative" href="/atom.xml" title="do less, think more!" type="application/atom+xml">
   
@@ -61,39 +62,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/14/phantomjs-install/" class="archive-article-date">
-  <time datetime="2016-10-14T08:37:58.000Z" itemprop="datePublished">Oct 14</time>
+        <section id="main"><article id="post-ssh-without-password" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/14/ssh-without-password/" class="article-date">
+  <time datetime="2016-10-14T09:16:21.000Z" itemprop="datePublished">2016-10-14</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/14/phantomjs-install/">phantomjs在linux上的安装</a>
+    <h1 class="article-title" itemprop="name">
+      ssh 免密码登录设置
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="linux设置免密码登录"><a href="#linux设置免密码登录" class="headerlink" title="linux设置免密码登录"></a>linux设置免密码登录</h2><p>在自动化部署工作中，为安全考虑，不会允许在脚本中使用登录密码进入服务器，这就要求要做密码免登操作。具体步骤如下：<br>1 生成本地机器的公司钥对<br>ssh-keygen -t rsa -b 2048     (指定使用rsa算法，生成的密钥长度为2048位)<br>2 拷贝本地机器的公钥文件内容到远端机器的authorized_keys文件<br>cat ~/.ssh/id_rsa.pub | ssh foo@example.com ‘cat &gt;&gt; .ssh/authorized_keys’</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1 <a href="http://www.howtogeek.com/168147/add-public-ssh-key-to-remote-server-in-a-single-command/" target="_blank" rel="external">http://www.howtogeek.com/168147/add-public-ssh-key-to-remote-server-in-a-single-command/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/10/14/ssh-without-password/" data-id="ciu9kfwks001t7k8pbvsyowd5" class="article-share-link">Share</a>
+      
+        <a href="https://terminatorheart.github.io/2016/10/14/ssh-without-password/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/14/phantomjs-install/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">phantomjs在linux上的安装</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -191,11 +221,13 @@
 <script>
   var disqus_shortname = 'terminatorheart';
   
+  var disqus_url = 'https://terminatorheart.github.io/2016/10/14/ssh-without-password/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
