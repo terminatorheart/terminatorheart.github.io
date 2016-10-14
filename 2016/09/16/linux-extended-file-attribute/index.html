@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | do less, think more!</title>
+  <title>linux-extended-file-attribute | do less, think more!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="do less, think more!">
-<meta property="og:url" content="https://terminatorheart.github.io/archives/page/2/index.html">
+  <meta name="description" content="extended file attribute(扩展文件属性)1. 概念在linux操作系统所使用的现代文件系统中，赋予了管理员额外操纵文件和目录的能力。而这，就是扩展文件属性。扩展文件属性的配置独立于acl。包含在内核中，主要可用的文件系统属性有以下这些A 当文件修改时，不修改文件的最后修改时间(atime记录)a 文件内容不允许被覆盖写或者删除，仅允许在文件末尾新增内容c 表明文件是被压缩过的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-extended-file-attribute">
+<meta property="og:url" content="https://terminatorheart.github.io/2016/09/16/linux-extended-file-attribute/index.html">
 <meta property="og:site_name" content="do less, think more!">
-<meta property="og:description">
+<meta property="og:description" content="extended file attribute(扩展文件属性)1. 概念在linux操作系统所使用的现代文件系统中，赋予了管理员额外操纵文件和目录的能力。而这，就是扩展文件属性。扩展文件属性的配置独立于acl。包含在内核中，主要可用的文件系统属性有以下这些A 当文件修改时，不修改文件的最后修改时间(atime记录)a 文件内容不允许被覆盖写或者删除，仅允许在文件末尾新增内容c 表明文件是被压缩过的">
+<meta property="og:updated_time" content="2016-09-16T13:35:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="do less, think more!">
-<meta name="twitter:description">
+<meta name="twitter:title" content="linux-extended-file-attribute">
+<meta name="twitter:description" content="extended file attribute(扩展文件属性)1. 概念在linux操作系统所使用的现代文件系统中，赋予了管理员额外操纵文件和目录的能力。而这，就是扩展文件属性。扩展文件属性的配置独立于acl。包含在内核中，主要可用的文件系统属性有以下这些A 当文件修改时，不修改文件的最后修改时间(atime记录)a 文件内容不允许被覆盖写或者删除，仅允许在文件末尾新增内容c 表明文件是被压缩过的">
   
     <link rel="alternative" href="/atom.xml" title="do less, think more!" type="application/atom+xml">
   
@@ -61,77 +62,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/04/gulp-learning-1/" class="archive-article-date">
-  <time datetime="2015-05-04T09:32:47.000Z" itemprop="datePublished">May 4</time>
+        <section id="main"><article id="post-linux-extended-file-attribute" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/16/linux-extended-file-attribute/" class="article-date">
+  <time datetime="2016-09-16T13:35:52.000Z" itemprop="datePublished">2016-09-16</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/04/gulp-learning-1/">gulp learning (1)</a>
+    <h1 class="article-title" itemprop="name">
+      linux-extended-file-attribute
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/28/javascript-function/" class="archive-article-date">
-  <time datetime="2015-04-28T01:30:39.000Z" itemprop="datePublished">Apr 28</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/28/javascript-function/">javascript 函数 (1)</a>
-    </h1>
-  
+        <h1 id="extended-file-attribute-扩展文件属性"><a href="#extended-file-attribute-扩展文件属性" class="headerlink" title="extended file attribute(扩展文件属性)"></a>extended file attribute(扩展文件属性)</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h2><p>在linux操作系统所使用的现代文件系统中，赋予了管理员额外操纵文件和目录的能力。而这，就是扩展文件属性。<br>扩展文件属性的配置独立于acl。<br>包含在内核中，主要可用的文件系统属性有以下这些<br>A 当文件修改时，不修改文件的最后修改时间(atime记录)<br>a 文件内容不允许被覆盖写或者删除，仅允许在文件末尾新增内容<br>c 表明文件是被压缩过的，保存在文件中的数据自动被压缩<br>D 当一个目录被修改的时候，同时将修改存储到硬盘上<br>d 当使用dump程序进行备份拷贝时候，给定的文件将被跳过<br>i 使得所有的系统用户都不能对文件进行操作<br>j 在ext3文件系统中，强制在将文件保存到硬盘之前，先保存到值班日志<br>s 删除文件时，将文件占据的空间使用0进行覆盖写<br>S 修改文件时，立刻同步保存到硬盘<br>t<br>u 删除文件时，其磁盘上的内容不被覆写，以便文件以后进行恢复</p>
+<h2 id="2-察看和设置"><a href="#2-察看和设置" class="headerlink" title="2. 察看和设置"></a>2. 察看和设置</h2><p>可以通过lsattr察看，chattr进行修改<br>chattr 使用+表示增加给定的属性，-表示减少给定的属性，=表示只设置给定的属性<br>例如：<br>chattr +A test.txt      // 给文件test.txt添加扩展文件属性A<br>chattr -a test.txt      // 给文件test.txt去除扩展文件属性a<br>chattr =s test.txt      // 给文件test.txt设置扩展属性s（其他已有的扩展文件属性均被去除） </p>
+<h2 id="3-参考资料："><a href="#3-参考资料：" class="headerlink" title="3. 参考资料："></a>3. 参考资料：</h2><p>1 <a href="https://books.google.com.hk/books?id=VpiMCwAAQBAJ&amp;pg=PT4&amp;lpg=PT4&amp;dq=extended+attributes+on+filesystem+objects&amp;source=bl&amp;ots=airyGHyYsA&amp;sig=e1w1UdvQVFpATXIcBmtmahcnix8&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwj9ste5_5PPAhWJoZQKHXk6CgcQ6AEIOjAF#v=onepage&amp;q&amp;f=false" target="_blank" rel="external">https://books.google.com.hk/books?id=VpiMCwAAQBAJ&amp;pg=PT4&amp;lpg=PT4&amp;dq=extended+attributes+on+filesystem+objects&amp;source=bl&amp;ots=airyGHyYsA&amp;sig=e1w1UdvQVFpATXIcBmtmahcnix8&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwj9ste5_5PPAhWJoZQKHXk6CgcQ6AEIOjAF#v=onepage&amp;q&amp;f=false</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/21/email-rules/" class="archive-article-date">
-  <time datetime="2015-04-21T03:55:24.000Z" itemprop="datePublished">Apr 21</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/21/email-rules/">邮箱规则整理</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/09/16/linux-extended-file-attribute/" data-id="ciu92qrbd0027wn8pu4a8h1ge" class="article-share-link">Share</a>
+      
+        <a href="https://terminatorheart.github.io/2016/09/16/linux-extended-file-attribute/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/11/router-path/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          路由路径解析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/09/background-position/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">background-position属性兼容性问题</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -229,11 +229,13 @@
 <script>
   var disqus_shortname = 'terminatorheart';
   
+  var disqus_url = 'https://terminatorheart.github.io/2016/09/16/linux-extended-file-attribute/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
