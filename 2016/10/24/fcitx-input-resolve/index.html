@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>npm install -g package_name 权限问题应对方案 | do less, think more!</title>
+  <title>fcitx安装折腾 | do less, think more!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当我们在普通用户组条件下使用命令npm install -g package_name时候，可能会碰到如下错误提示：12345678910$ npm install -g npmError: EACCES: permission denied, access &apos;/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/gracefu">
+  <meta name="description" content="记一次fcitx安装折腾背景：gentoo系统进行了一次大升级（大约积攒了一年多的时间没有滚动升级），升级后桌面环境为gnome-3.18.0过程：1 安装fcitx， emerge -avq fcitx，并且添加了gtk3的use flag (添加文件/etc/portage/package.use/fcitx文件，文件内容为app-i18n/fcitx gtk3)2 安装fcitx-cloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm install -g package_name 权限问题应对方案">
-<meta property="og:url" content="https://terminatorheart.github.io/2016/03/12/npm-permission-denied/index.html">
+<meta property="og:title" content="fcitx安装折腾">
+<meta property="og:url" content="https://terminatorheart.github.io/2016/10/24/fcitx-input-resolve/index.html">
 <meta property="og:site_name" content="do less, think more!">
-<meta property="og:description" content="当我们在普通用户组条件下使用命令npm install -g package_name时候，可能会碰到如下错误提示：12345678910$ npm install -g npmError: EACCES: permission denied, access &apos;/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/gracefu">
-<meta property="og:updated_time" content="2016-03-11T16:15:02.000Z">
+<meta property="og:description" content="记一次fcitx安装折腾背景：gentoo系统进行了一次大升级（大约积攒了一年多的时间没有滚动升级），升级后桌面环境为gnome-3.18.0过程：1 安装fcitx， emerge -avq fcitx，并且添加了gtk3的use flag (添加文件/etc/portage/package.use/fcitx文件，文件内容为app-i18n/fcitx gtk3)2 安装fcitx-cloud">
+<meta property="og:updated_time" content="2016-10-24T05:58:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm install -g package_name 权限问题应对方案">
-<meta name="twitter:description" content="当我们在普通用户组条件下使用命令npm install -g package_name时候，可能会碰到如下错误提示：12345678910$ npm install -g npmError: EACCES: permission denied, access &apos;/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/gracefu">
+<meta name="twitter:title" content="fcitx安装折腾">
+<meta name="twitter:description" content="记一次fcitx安装折腾背景：gentoo系统进行了一次大升级（大约积攒了一年多的时间没有滚动升级），升级后桌面环境为gnome-3.18.0过程：1 安装fcitx， emerge -avq fcitx，并且添加了gtk3的use flag (添加文件/etc/portage/package.use/fcitx文件，文件内容为app-i18n/fcitx gtk3)2 安装fcitx-cloud">
   
     <link rel="alternative" href="/atom.xml" title="do less, think more!" type="application/atom+xml">
   
@@ -62,14 +62,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-npm-permission-denied" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-fcitx-input-resolve" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/12/npm-permission-denied/" class="article-date">
-  <time datetime="2016-03-11T16:15:02.000Z" itemprop="datePublished">2016-03-12</time>
+    <a href="/2016/10/24/fcitx-input-resolve/" class="article-date">
+  <time datetime="2016-10-24T05:58:34.000Z" itemprop="datePublished">2016-10-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      npm install -g package_name 权限问题应对方案
+      fcitx安装折腾
     </h1>
   
 
@@ -88,32 +88,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当我们在普通用户组条件下使用命令npm install -g package_name时候，可能会碰到如下错误提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npm</span><br><span class="line">Error: EACCES: permission denied, access <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span></span><br><span class="line">npm ERR!     at Error (native)</span><br><span class="line">npm ERR!  &#123; [Error: EACCES: permission denied, access <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span>]</span><br><span class="line">npm ERR!   errno: -13,</span><br><span class="line">npm ERR!   code: <span class="string">'EACCES'</span>,</span><br><span class="line">npm ERR!   syscall: <span class="string">'access'</span>,</span><br><span class="line">npm ERR!   path: <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span> &#125;</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! Please try running this <span class="built_in">command</span> again as root/Administrator.</span><br></pre></td></tr></table></figure></p>
-<p>这是因为普通用户对于npm默认使用的文件夹不具有足够的权限。<br>根据<a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank" rel="external">官方文档</a>说明<br>有两种解决办法：  </p>
-<ol>
-<li>修改默认全局npm包安装位置内文件夹的权限  </li>
-<li>使用另外一个文件夹作为全局npm包安装位置 </li>
-</ol>
-<h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><h3 id="步骤1-察看对全局npm包安装位置的设定"><a href="#步骤1-察看对全局npm包安装位置的设定" class="headerlink" title="步骤1 察看对全局npm包安装位置的设定"></a>步骤1 察看对全局npm包安装位置的设定</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config get prefix</span><br></pre></td></tr></table></figure>
-<p><strong>特别注意：</strong><a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank" rel="external">官方文档</a>明确指出，如果npm config get prefix命令返回值为/usr，则必须使用第二种方案  </p>
-<h3 id="步骤二-更改必要目录的权限"><a href="#步骤二-更改必要目录的权限" class="headerlink" title="步骤二 更改必要目录的权限"></a>步骤二 更改必要目录的权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R $(whoami) $(npm config get prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure>
-<p>这条命令目的是将全局安装npm包的路径下的lib/node_modules,/lib/bin,lib/share目录的拥有者设置为当前普通用户。因为这些目录的拥有着本身就具有对这些目录的读写权限，所以问题得以解决(此方案我执行过多次，没有碰到问题)<br>然后再次运行之前运行不通过的命令，现在可以顺利通过了</p>
-<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><h3 id="步骤一-在合适位置创建一个文件夹"><a href="#步骤一-在合适位置创建一个文件夹" class="headerlink" title="步骤一 在合适位置创建一个文件夹"></a>步骤一 在合适位置创建一个文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.npm-global</span><br></pre></td></tr></table></figure>
-<h3 id="步骤二-使用之前创建的文件夹作为全局npm包安装的位置"><a href="#步骤二-使用之前创建的文件夹作为全局npm包安装的位置" class="headerlink" title="步骤二 使用之前创建的文件夹作为全局npm包安装的位置"></a>步骤二 使用之前创建的文件夹作为全局npm包安装的位置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="built_in">set</span> prefix <span class="string">'~/.npm-global'</span></span><br></pre></td></tr></table></figure>
-<h3 id="步骤三-将新设定的路径加入环境变量"><a href="#步骤三-将新设定的路径加入环境变量" class="headerlink" title="步骤三 将新设定的路径加入环境变量"></a>步骤三 将新设定的路径加入环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> PATH=~/.npm-global/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p>将我们设定的全局npm包安装位置下的bin目录加入到系统环境变量，这样我们才可以在任意命令行位置都能执行全局npm包提供的命令  </p>
-<h3 id="步骤四-让系统重新载入环境变量"><a href="#步骤四-让系统重新载入环境变量" class="headerlink" title="步骤四 让系统重新载入环境变量"></a>步骤四 让系统重新载入环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
-<p>完成之后，再次运行之前运行不通过的命令，现在可以顺利通过了</p>
+        <h2 id="记一次fcitx安装折腾"><a href="#记一次fcitx安装折腾" class="headerlink" title="记一次fcitx安装折腾"></a>记一次fcitx安装折腾</h2><p>背景：gentoo系统进行了一次大升级（大约积攒了一年多的时间没有滚动升级），升级后桌面环境为gnome-3.18.0<br>过程：<br>1 安装fcitx， emerge -avq fcitx，并且添加了gtk3的use flag (添加文件/etc/portage/package.use/fcitx文件，文件内容为app-i18n/fcitx gtk3)<br>2 安装fcitx-cloudpinyin fcitx-sunpinyin， emerge -avq fcitx-cloudpinyin fcitx-sunpinyin，使得fcitx可以进行中文输入<br>3 打开Fcitx Configuration，添加中文输入法<br>4 修改（或新建，如果不存在）.xprofile文件，设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx </span><br><span class="line">export QT_IM_MODULE=fcitx </span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot; </span><br></pre></td></tr></table></figure><br>经过以上步骤，在终端中以及vim编辑器下还不能正常切换中英文输入法，只能使用英文输入，为解决这个问题，进行如下一步操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;&#123;&apos;Gtk/IMModule&apos;:&lt;&apos;fcitx&apos;&gt;&#125;&quot;</span><br></pre></td></tr></table></figure><br>5 安装google-chrome， emerge  -avq google-chrome，在此之前，需要先确保已经通过emerge –sync对系统源进行更新，否则可能出现无法下载google-chrome软件包，因为在gentoo源上始终只提供截止当前最新的google-chrome包，老版本的包都会被移除<br>6 重启系统，发现ctrl+space无法在chrome下进行中英文输入法切换，在其他软件，包括gentoo默认浏览器下，都可以正常输入中文，只不过输入中文为繁体，这可以通过ctlr+shift+f组合键切换为简体中文（在fcitx运行的情况下）<br>7 通过设置use并重新编译fcitx解决仅在google-chrome下不能切换中英文问题：修改/etc/portage/package.use/fcitx文件内容为app-i18n/fcitx gtk3 gtk2，然后重新编译fcitx，再重启chrome浏览器，问题得以解决</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1 <a href="https://wiki.archlinux.org/index.php/fcitx" target="_blank" rel="external">https://wiki.archlinux.org/index.php/fcitx</a><br>2 <a href="https://forums.gentoo.org/viewtopic-p-7961822.html?sid=fd7b34290ea4c40f7359ab52d4cea033" target="_blank" rel="external">https://forums.gentoo.org/viewtopic-p-7961822.html?sid=fd7b34290ea4c40f7359ab52d4cea033</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2016/03/12/npm-permission-denied/" data-id="ciuqcday8000ussgkykuoixyy" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2016/10/24/fcitx-input-resolve/" data-id="ciuqcdaxd0006ssgkqz8z9wb5" class="article-share-link">Share</a>
       
-        <a href="https://terminatorheart.github.io/2016/03/12/npm-permission-denied/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://terminatorheart.github.io/2016/10/24/fcitx-input-resolve/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/permission/">permission</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-fcitx/">linux fcitx</a></li></ul>
 
     </footer>
   </div>
@@ -121,19 +107,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/12/android-series-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          android开发学习系列1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/10/14/ssh-without-password/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">ssh 免密码登录设置</div>
     </a>
   
 </nav>
@@ -244,7 +221,7 @@
 <script>
   var disqus_shortname = 'terminatorheart';
   
-  var disqus_url = 'https://terminatorheart.github.io/2016/03/12/npm-permission-denied/';
+  var disqus_url = 'https://terminatorheart.github.io/2016/10/24/fcitx-input-resolve/';
   
   (function(){
     var dsq = document.createElement('script');
