@@ -3,39 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>about | do less, think more!</title>
+  <title>为bash shell添加git分支名称提示 | do less, think more!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实这是一个markdown语法说明页面^_^
-##段落段落其实就是一行或多行连续文本，其后面通过一行或多行空行隔开
-##大标题通过在标题头部添加一个或多个#号来创建大标题，而创建的#符号的个数表示标题的大小
-这是一个一级标题（h1标签）这是一个二级标题（h2标签）##块级引用通过在每行文本前添加&amp;gt;号，例如
-
-这里是引用内容这里还是引用内容这里仍然是引用内容
-
-##文字样式可以使文字加粗或者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://terminatorheart.github.io/about/index.html">
+  <meta name="description" content="为bash shell添加git分支名称提示在我的日常开发工作中，主要使用git flow工作流，因此，会经常涉及到分支间的切换问题，发现周围小伙伴使用的zsh可以给终端添加git分支提示，效果一级棒，但是作为一个bash shell拥护者，肯定是不会为这么一个小功能就转投zsh的怀抱啦。于是乎，我就想看看bash shell下是否也有类似的解决方案。经过调查，发现其实原理并不复杂。简单来说，就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为bash shell添加git分支名称提示">
+<meta property="og:url" content="https://terminatorheart.github.io/2016/10/26/add-git-branch-name-to-bash-prompt/index.html">
 <meta property="og:site_name" content="do less, think more!">
-<meta property="og:description" content="其实这是一个markdown语法说明页面^_^
-##段落段落其实就是一行或多行连续文本，其后面通过一行或多行空行隔开
-##大标题通过在标题头部添加一个或多个#号来创建大标题，而创建的#符号的个数表示标题的大小
-这是一个一级标题（h1标签）这是一个二级标题（h2标签）##块级引用通过在每行文本前添加&amp;gt;号，例如
-
-这里是引用内容这里还是引用内容这里仍然是引用内容
-
-##文字样式可以使文字加粗或者">
-<meta property="og:updated_time" content="2016-03-11T16:05:16.000Z">
+<meta property="og:description" content="为bash shell添加git分支名称提示在我的日常开发工作中，主要使用git flow工作流，因此，会经常涉及到分支间的切换问题，发现周围小伙伴使用的zsh可以给终端添加git分支提示，效果一级棒，但是作为一个bash shell拥护者，肯定是不会为这么一个小功能就转投zsh的怀抱啦。于是乎，我就想看看bash shell下是否也有类似的解决方案。经过调查，发现其实原理并不复杂。简单来说，就是">
+<meta property="og:updated_time" content="2016-10-26T03:36:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="其实这是一个markdown语法说明页面^_^
-##段落段落其实就是一行或多行连续文本，其后面通过一行或多行空行隔开
-##大标题通过在标题头部添加一个或多个#号来创建大标题，而创建的#符号的个数表示标题的大小
-这是一个一级标题（h1标签）这是一个二级标题（h2标签）##块级引用通过在每行文本前添加&amp;gt;号，例如
-
-这里是引用内容这里还是引用内容这里仍然是引用内容
-
-##文字样式可以使文字加粗或者">
+<meta name="twitter:title" content="为bash shell添加git分支名称提示">
+<meta name="twitter:description" content="为bash shell添加git分支名称提示在我的日常开发工作中，主要使用git flow工作流，因此，会经常涉及到分支间的切换问题，发现周围小伙伴使用的zsh可以给终端添加git分支提示，效果一级棒，但是作为一个bash shell拥护者，肯定是不会为这么一个小功能就转投zsh的怀抱啦。于是乎，我就想看看bash shell下是否也有类似的解决方案。经过调查，发现其实原理并不复杂。简单来说，就是">
   
     <link rel="alternative" href="/atom.xml" title="do less, think more!" type="application/atom+xml">
   
@@ -83,12 +62,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-add-git-branch-name-to-bash-prompt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2015-04-21T02:18:06.000Z" itemprop="datePublished">2015-04-21</time>
+    <a href="/2016/10/26/add-git-branch-name-to-bash-prompt/" class="article-date">
+  <time datetime="2016-10-26T03:36:05.000Z" itemprop="datePublished">2016-10-26</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -97,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      为bash shell添加git分支名称提示
     </h1>
   
 
@@ -105,59 +88,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实这是一个markdown语法说明页面^_^</p>
-<p>##段落<br>段落其实就是一行或多行连续文本，其后面通过一行或多行空行隔开</p>
-<p>##大标题<br>通过在标题头部添加一个或多个#号来创建大标题，而创建的#符号的个数表示标题的大小</p>
-<h1 id="这是一个一级标题（h1标签）"><a href="#这是一个一级标题（h1标签）" class="headerlink" title="这是一个一级标题（h1标签）"></a>这是一个一级标题（h1标签）</h1><h2 id="这是一个二级标题（h2标签）"><a href="#这是一个二级标题（h2标签）" class="headerlink" title="这是一个二级标题（h2标签）"></a>这是一个二级标题（h2标签）</h2><p>##块级引用<br>通过在每行文本前添加&gt;号，例如</p>
-<blockquote>
-<p>这里是引用内容<br>这里还是引用内容<br>这里仍然是引用内容</p>
-</blockquote>
-<p>##文字样式<br>可以使文字加粗或者以斜体形式展示<br><em>这里是斜体展示内容</em>（使用方式：文本前后都加上一个*号）<br><strong>这里是加粗的文本内容</strong>（使用方式：文本前后个加上两个*号）<br>也可以一起使用，这个时候可以使用*号或者_符号来分别包裹外层文本和内层文本内容，当然也可以反过来使用<br><strong>我是粗体 <em>我是粗体包裹的斜体，使用下划线包裹</em> 我是粗体</strong><br><strong>我是粗体 <em>我是粗体包裹的斜体，使用星号包裹</em> 我是粗体</strong><br><em>我是斜体，使用星号包裹 <strong>我是包裹在斜体内的粗体</strong> 我是斜体，使用星号包裹</em><br><em>我是斜体，使用下划线包裹 <strong>我是包裹在斜体内的粗体</strong> 我是斜体，使用下划线包裹</em></p>
-<p>##无序列表<br>在列表内容的每一项前面添加符号*或者符号-来创建无序列表</p>
-<ul>
-<li>无序列表第一项</li>
-<li>无序列表第二项</li>
-<li>无序列表第三项</li>
-</ul>
-<ul>
-<li>另一个无序列表的第一项</li>
-<li>另一个无序列表的第二项</li>
-<li>另一个无序列表的第三项</li>
-</ul>
-<p>##有序列表<br>在列表内容每一项前面添加数字来创建有序列表</p>
-<ol>
-<li>有序列表第一项</li>
-<li>有序列表第二项</li>
-<li>有序列表第三项</li>
-</ol>
-<p>##嵌套列表<br>创建嵌套列表的时候，在子列表项头部缩进两个空格</p>
-<ol>
-<li>这是父级列表第一项<ul>
-<li>这是子列表第一项，缩进了两个空格</li>
-<li>这是子列表第二项，缩进了两个空格</li>
-<li>这是子列表第三项，缩进了两个空格</li>
-</ul>
-</li>
-<li>这是父级列表第二项</li>
-<li>这是父级列表第三项</li>
-</ol>
-<p>##行内样式<br>使用单个反勾`将文本格式化为特定的等宽字体显示，在反勾号包裹范围内的任何内容显示效果就像没有包含其他任何样式一样<br>这是一句包含<code>反勾号</code>排版的语句，就算我们指定反勾号内的文本要<code>**粗体显示**</code>，结果也不会有效果，反而反勾号内的命令符号会像字符一样输出</p>
-<p>##多行文本<br>分别在起始行前面和结尾行后面使用三个勾号进行包裹来格式化文本，使之就像一个独立的块一样显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这里是三勾号包裹的内容（第一行）</span><br><span class="line">这里是三勾号包裹的内容（第二行）</span><br><span class="line">这里是三勾号包裹的内容（第三行）</span><br><span class="line">显然，这种格式非常适合展示嵌入代码</span><br></pre></td></tr></table></figure></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>将链接内容通过中括号[]包裹起来可以创建链接，然后将链接地址用圆括号()包裹起来<br>这是一个到<a href="https://help.github.com/articles/markdown-basics" target="_blank" rel="external">说明原文</a>的链接</p>
-<p>##结语<br>以上是markdown语法的基础部分，更多内容下次再写（xue），goodbye！</p>
+        <h2 id="为bash-shell添加git分支名称提示"><a href="#为bash-shell添加git分支名称提示" class="headerlink" title="为bash shell添加git分支名称提示"></a>为bash shell添加git分支名称提示</h2><p>在我的日常开发工作中，主要使用git flow工作流，因此，会经常涉及到分支间的切换问题，发现周围小伙伴使用的zsh可以给终端添加git分支提示，效果一级棒，但是作为一个bash shell拥护者，肯定是不会为这么一个小功能就转投zsh的怀抱啦。于是乎，我就想看看bash shell下是否也有类似的解决方案。经过调查，发现其实原理并不复杂。简单来说，就是通过某种方法获取到当前git的分支名，然后附加在bash shell的提示之后，组成新的bash shell提示文字。<br>简单的修改如下：<br>1 在~/.bashrc文件里新增一个函数，用于获取git的分支信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parse_git_branch() &#123;</span><br><span class="line">     git branch 2&gt; /dev/null | sed -e &apos;/^[^*]/d&apos; -e &apos;s/* \(.*\)/ (\1)/&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>2 将获取的git分支信息附加到终端提示符之后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># PS1=&apos;\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] &apos; # old bash shell prompt</span><br><span class="line">PS1=&quot;\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] &quot;</span><br></pre></td></tr></table></figure><br>从上面的新旧PS1的对比不难看出，就是在终端输出的结尾位置添加了git的分支名称，并且用合适的颜色进行了设置。</p>
+<p>参考资料:<br>1 <a href="https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt" target="_blank" rel="external">https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/about/index.html" data-id="ciusjlyqt00012y6fvol33o27" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2016/10/26/add-git-branch-name-to-bash-prompt/" data-id="ciusjlyre000f2y6faetro8pv" class="article-share-link">Share</a>
       
-        <a href="https://terminatorheart.github.io/about/index.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://terminatorheart.github.io/2016/10/26/add-git-branch-name-to-bash-prompt/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/24/fcitx-input-resolve/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">fcitx安装折腾</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -264,7 +221,7 @@
 <script>
   var disqus_shortname = 'terminatorheart';
   
-  var disqus_url = 'https://terminatorheart.github.io/about/index.html';
+  var disqus_url = 'https://terminatorheart.github.io/2016/10/26/add-git-branch-name-to-bash-prompt/';
   
   (function(){
     var dsq = document.createElement('script');
