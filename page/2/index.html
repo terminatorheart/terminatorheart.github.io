@@ -63,6 +63,161 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-class-in-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/09/class-in-js/" class="article-date">
+  <time datetime="2016-09-08T17:00:34.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/class-in-js/">js中的class</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在js中，类（class）是ECMAScript 6新引入的一个语法糖，仍然基于js中已经存在的基于原型的继承模型，因此，这个语法并没有为js引入新的继承模型。事实上，class仍然是特殊的函数。</p>
+<h2 id="类定义："><a href="#类定义：" class="headerlink" title="类定义："></a>类定义：</h2><p>定义类的方式和定义函数的方式一样，也有两种，分别是类声明以及类表达式</p>
+<h3 id="1-类声明："><a href="#1-类声明：" class="headerlink" title="1 类声明："></a>1 类声明：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(height, width) &#123;</span><br><span class="line">    <span class="keyword">this</span>.height = height;</span><br><span class="line">    <span class="keyword">this</span>.width = width;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类声明与函数声明的一个显著区别是，在函数声明中，存在着变量提升的特性，而在类声明中，则没有这个特性，因此，使用类声明的时候，一定要遵循先声明，后使用的原则。如下的代码就会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Polygon(); <span class="comment">// ReferenceError</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而下面这种代码则不会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Polygon();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Polygo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-类表达式："><a href="#2-类表达式：" class="headerlink" title="2 类表达式："></a>2 类表达式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匿名类 </span></span><br><span class="line"><span class="keyword">var</span> Polygon = <span class="class"><span class="keyword">class</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(height, width) &#123;</span><br><span class="line">    <span class="keyword">this</span>.height = height;</span><br><span class="line">    <span class="keyword">this</span>.width = width;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 命名类</span></span><br><span class="line"><span class="keyword">var</span> Polygon = <span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(height, width) &#123;</span><br><span class="line">    <span class="keyword">this</span>.height = height;</span><br><span class="line">    <span class="keyword">this</span>.width = width;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/09/09/class-in-js/" data-id="cj6k5eosu001k189f5v8nr9ye" class="article-share-link">Share</a>
+      
+        <a href="https://terminatorheart.github.io/2016/09/09/class-in-js/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-series-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/12/android-series-1/" class="article-date">
+  <time datetime="2016-03-11T17:24:40.000Z" itemprop="datePublished">2016-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/12/android-series-1/">android开发学习系列1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Android-APP-基础知识"><a href="#1-Android-APP-基础知识" class="headerlink" title="1. Android APP 基础知识"></a>1. Android APP 基础知识</h1><h2 id="App-Components（app组件）"><a href="#App-Components（app组件）" class="headerlink" title="App Components（app组件）"></a>App Components（app组件）</h2><p>app组件是一个android应用中最基本的构成块，每一个组件可以构成一个独立的app访问入口，但并不意味着每一个组件一定要成为app的一个访问入口。一共有四种组件：Activities，Services，Content Provider，Broadcast receivers</p>
+<h3 id="Activities（活动）"><a href="#Activities（活动）" class="headerlink" title="Activities（活动）"></a>Activities（活动）</h3><p>一个Activity（活动）代表了独立的，具有用户界面的一屏区域。</p>
+<h3 id="Services（服务）"><a href="#Services（服务）" class="headerlink" title="Services（服务）"></a>Services（服务）</h3><p>一个服务是一个运行于后台，进行耗时长的操作或者是为远程进程处理任务的组件，服务不提供用户界面</p>
+<h3 id="Content-Provider（内容提供商）"><a href="#Content-Provider（内容提供商）" class="headerlink" title="Content Provider（内容提供商）"></a>Content Provider（内容提供商）</h3><p>一个内容提供商管理着一份应用数据。其他应用可以通过内容提供商来查询甚至修改（前提是获得本引用的允许）本应用的数据</p>
+<h3 id="Broadcast-receivers（广播接收者）"><a href="#Broadcast-receivers（广播接收者）" class="headerlink" title="Broadcast receivers（广播接收者）"></a>Broadcast receivers（广播接收者）</h3><p>一个广播接收者是一个回应系统范围内的广播通知的组件，很多广播就来源于系统。比如通知屏幕关闭，电量低等。应用也可以发起广播，比如：让其他应用知道一些数据已经被下载到设备上了，可以供这些应用使用了。尽管广播接收者不显示用户界面，它们却有可能在广播事件发生的时候通过创建状态栏通知来告知用户。</p>
+<p>Android系统设计的一个独特点在于任何一个app都可以启动另一个app的组件。所以<br>Android app没有一个单点入口。<br>而由于每个app都通过文件权限限制访问其他应用，并且系统将每个应用都运行在独立的进程中，所以我们并不能直接激活另一个app中的组件，但是Android系统是可以做这件事情的。所以如果要激活另一个app中的组件，就必须向系统发送消息以指明启动特定app组件的意图。然后系统才会为我们激活要求的组件。</p>
+<h2 id="Activating-Components（激活的组件）"><a href="#Activating-Components（激活的组件）" class="headerlink" title="Activating Components（激活的组件）"></a>Activating Components（激活的组件）</h2><p>以上四种组件中的三种－Activities（活动），services（服务），broadcast receivers（广播接收者）－都是通过一个叫做intent（意图）的异步信息激活。不论组件是属于你的app还是别人的，intent都是在运行时将互相独立的组件绑定到一起。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/03/12/android-series-1/" data-id="cj6k5eosh001d189f15zw7pjw" class="article-share-link">Share</a>
+      
+        <a href="https://terminatorheart.github.io/2016/03/12/android-series-1/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-npm-permission-denied" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/12/npm-permission-denied/" class="article-date">
+  <time datetime="2016-03-11T16:15:02.000Z" itemprop="datePublished">2016-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/12/npm-permission-denied/">npm install -g package_name 权限问题应对方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们在普通用户组条件下使用命令npm install -g package_name时候，可能会碰到如下错误提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npm</span><br><span class="line">Error: EACCES: permission denied, access <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span></span><br><span class="line">npm ERR!     at Error (native)</span><br><span class="line">npm ERR!  &#123; [Error: EACCES: permission denied, access <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span>]</span><br><span class="line">npm ERR!   errno: -13,</span><br><span class="line">npm ERR!   code: <span class="string">'EACCES'</span>,</span><br><span class="line">npm ERR!   syscall: <span class="string">'access'</span>,</span><br><span class="line">npm ERR!   path: <span class="string">'/**/**/**/node_modules/npm/node_modules/cmd-shim/node_modules/graceful-fs'</span> &#125;</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! Please try running this <span class="built_in">command</span> again as root/Administrator.</span><br></pre></td></tr></table></figure></p>
+<p>这是因为普通用户对于npm默认使用的文件夹不具有足够的权限。<br>根据<a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank" rel="external">官方文档</a>说明<br>有两种解决办法：  </p>
+<ol>
+<li>修改默认全局npm包安装位置内文件夹的权限  </li>
+<li>使用另外一个文件夹作为全局npm包安装位置 </li>
+</ol>
+<h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><h3 id="步骤1-察看对全局npm包安装位置的设定"><a href="#步骤1-察看对全局npm包安装位置的设定" class="headerlink" title="步骤1 察看对全局npm包安装位置的设定"></a>步骤1 察看对全局npm包安装位置的设定</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config get prefix</span><br></pre></td></tr></table></figure>
+<p><strong>特别注意：</strong><a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank" rel="external">官方文档</a>明确指出，如果npm config get prefix命令返回值为/usr，则必须使用第二种方案  </p>
+<h3 id="步骤二-更改必要目录的权限"><a href="#步骤二-更改必要目录的权限" class="headerlink" title="步骤二 更改必要目录的权限"></a>步骤二 更改必要目录的权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R $(whoami) $(npm config get prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure>
+<p>这条命令目的是将全局安装npm包的路径下的lib/node_modules,/lib/bin,lib/share目录的拥有者设置为当前普通用户。因为这些目录的拥有着本身就具有对这些目录的读写权限，所以问题得以解决(此方案我执行过多次，没有碰到问题)<br>然后再次运行之前运行不通过的命令，现在可以顺利通过了</p>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><h3 id="步骤一-在合适位置创建一个文件夹"><a href="#步骤一-在合适位置创建一个文件夹" class="headerlink" title="步骤一 在合适位置创建一个文件夹"></a>步骤一 在合适位置创建一个文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/.npm-global</span><br></pre></td></tr></table></figure>
+<h3 id="步骤二-使用之前创建的文件夹作为全局npm包安装的位置"><a href="#步骤二-使用之前创建的文件夹作为全局npm包安装的位置" class="headerlink" title="步骤二 使用之前创建的文件夹作为全局npm包安装的位置"></a>步骤二 使用之前创建的文件夹作为全局npm包安装的位置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="built_in">set</span> prefix <span class="string">'~/.npm-global'</span></span><br></pre></td></tr></table></figure>
+<h3 id="步骤三-将新设定的路径加入环境变量"><a href="#步骤三-将新设定的路径加入环境变量" class="headerlink" title="步骤三 将新设定的路径加入环境变量"></a>步骤三 将新设定的路径加入环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> PATH=~/.npm-global/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>将我们设定的全局npm包安装位置下的bin目录加入到系统环境变量，这样我们才可以在任意命令行位置都能执行全局npm包提供的命令  </p>
+<h3 id="步骤四-让系统重新载入环境变量"><a href="#步骤四-让系统重新载入环境变量" class="headerlink" title="步骤四 让系统重新载入环境变量"></a>步骤四 让系统重新载入环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
+<p>完成之后，再次运行之前运行不通过的命令，现在可以顺利通过了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://terminatorheart.github.io/2016/03/12/npm-permission-denied/" data-id="cj6k5eou8002r189fhytjr56t" class="article-share-link">Share</a>
+      
+        <a href="https://terminatorheart.github.io/2016/03/12/npm-permission-denied/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/permission/">permission</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/12/hello-world/" class="article-date">
@@ -98,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2016/03/12/hello-world/" data-id="ciusjlyse001d2y6f9d7rb8kk" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2016/03/12/hello-world/" data-id="cj6k5eotg0023189f9pljljzm" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2016/03/12/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -143,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/05/12/javascript-design-pattern-1/" data-id="ciusjlysb00182y6fnp3u9oin" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/05/12/javascript-design-pattern-1/" data-id="cj6k5eotm0026189f7lqb805a" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/05/12/javascript-design-pattern-1/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -191,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/05/08/javascript-trap/" data-id="ciusjlysw001m2y6f5le4peg9" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/05/08/javascript-trap/" data-id="cj6k5eotr002c189fhpqe3h79" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/05/08/javascript-trap/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -240,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/05/04/gulp-learning-2/" data-id="ciusjlys700152y6f4e4y1q28" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/05/04/gulp-learning-2/" data-id="cj6k5eotd0020189fwgzdpp3x" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/05/04/gulp-learning-2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -290,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/05/04/gulp-learning-1/" data-id="ciusjlys300122y6fhlbdnzb9" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/05/04/gulp-learning-1/" data-id="cj6k5eota001w189frqe6o81g" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/05/04/gulp-learning-1/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -336,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/04/28/javascript-function/" data-id="ciusjlysk001f2y6f1fyy46r2" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/04/28/javascript-function/" data-id="cj6k5eoto0029189f4wkrqfyh" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/04/28/javascript-function/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -427,7 +582,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://terminatorheart.github.io/2015/04/21/email-rules/" data-id="ciusjlys0000z2y6fxj4ci9gs" class="article-share-link">Share</a>
+      <a data-url="https://terminatorheart.github.io/2015/04/21/email-rules/" data-id="cj6k5eot0001l189fxewzyncr" class="article-share-link">Share</a>
       
         <a href="https://terminatorheart.github.io/2015/04/21/email-rules/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -454,7 +609,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gulp/">gulp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -463,7 +618,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-trap/">javascript trap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-fcitx/">linux fcitx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permission/">permission</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/">validate</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/design-pattern/">design pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-trap/">javascript trap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-fcitx/">linux fcitx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/permission/">permission</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validate/">validate</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -472,7 +627,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gulp/" style="font-size: 13.33px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-trap/" style="font-size: 10px;">javascript trap</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/linux-fcitx/" style="font-size: 10px;">linux fcitx</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a>
+      <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/design-pattern/" style="font-size: 10px;">design pattern</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gulp/" style="font-size: 13.33px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-trap/" style="font-size: 10px;">javascript trap</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/linux-fcitx/" style="font-size: 10px;">linux fcitx</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/validate/" style="font-size: 10px;">validate</a>
     </div>
   </div>
 
@@ -481,7 +636,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -493,23 +648,23 @@
       <ul>
         
           <li>
+            <a href="/2017/06/06/jenkins-problem/">jenkins problem</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/26/authorized-key/">authorized_key</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/16/gitlab-dockerlized/">gitlab_dockerlized</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/26/add-git-branch-name-to-bash-prompt/">为bash shell添加git分支名称提示</a>
           </li>
         
           <li>
             <a href="/2016/10/24/fcitx-input-resolve/">fcitx安装折腾</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/14/ssh-without-password/">ssh 免密码登录设置</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/14/phantomjs-install/">phantomjs在linux上的安装</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/11/router-path/">路由路径解析</a>
           </li>
         
       </ul>
@@ -524,7 +679,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 terminatorheart<br>
+      &copy; 2017 terminatorheart<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
